@@ -2,10 +2,8 @@ import * as Phaser from 'phaser'
 
 import { SimpleScene } from './scenes/simple'
 
-const gameConfig = {
-  width: 800,
-  height: 400,
+const game = new Phaser.Game({
+  width: window.innerWidth,
+  height: window.innerHeight,
   scene: SimpleScene,
-}
-
-new Phaser.Game(gameConfig)
+})

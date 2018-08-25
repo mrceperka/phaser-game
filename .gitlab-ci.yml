@@ -1,0 +1,20 @@
+image: node:9
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - yarn install
+
+pages:
+  stage: deploy
+  script:
+    - yarn build
+    - cp -r build public
+  artifacts:
+    paths:
+      - public # GitLab pages serve from a 'public' directory
+  only:
+    - master # run on master branch
