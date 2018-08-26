@@ -1,9 +1,18 @@
 import * as Phaser from 'phaser'
 
-import { SimpleScene } from './scenes/simple'
+import CatScene from './scenes/cat'
+import SkeletonScene from './scenes/skeleton'
 
 const game = new Phaser.Game({
+  type: Phaser.AUTO,
   width: window.innerWidth,
   height: window.innerHeight,
-  scene: SimpleScene,
+  backgroundColor: '#ffffff',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 1000 },
+    },
+  },
+  scene: [/*CatScene*/ SkeletonScene],
 })

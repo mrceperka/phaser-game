@@ -1,6 +1,6 @@
 import * as Phaser from 'phaser'
 
-export class SimpleScene extends Phaser.Scene {
+export default class SimpleScene extends Phaser.Scene {
   private _cats: Phaser.GameObjects.Image[] = []
   private _playOrPause: Phaser.GameObjects.Text
   private _running: boolean = true
